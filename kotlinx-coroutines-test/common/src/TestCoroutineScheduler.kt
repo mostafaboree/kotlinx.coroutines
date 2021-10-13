@@ -16,7 +16,7 @@ import kotlin.jvm.*
 /**
  * This is a scheduler for coroutines used in tests, providing the delay-skipping behavior.
  *
- * [Test dispatchers][TestCoroutineDispatcher] are parameterized with a scheduler. Several dispatchers can share the
+ * [Test dispatchers][TestDispatcher] are parameterized with a scheduler. Several dispatchers can share the
  * same scheduler, in which case * their knowledge about the virtual time will be synchronized. When the dispatchers
  * require scheduling an event at a * later point in time, they notify the scheduler, which will establish the order of
  * the tasks.
