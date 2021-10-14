@@ -100,6 +100,10 @@ public interface DelayController {
      * This is useful when testing functions that start a coroutine. By pausing the dispatcher assertions or
      * setup may be done between the time the coroutine is created and started.
      */
+    @Deprecated(
+        "Please use a dispatcher that is paused by default, like `StandardTestDispatcher`.",
+        level = DeprecationLevel.WARNING
+    )
     @ExperimentalCoroutinesApi // Since 1.2.1, tentatively till 1.3.0
     public suspend fun pauseDispatcher(block: suspend () -> Unit)
 
@@ -109,6 +113,10 @@ public interface DelayController {
      * When paused, the dispatcher will not execute any coroutines automatically, and you must call [runCurrent] or
      * [advanceTimeBy], or [advanceUntilIdle] to execute coroutines.
      */
+    @Deprecated(
+        "Please use a dispatcher that is paused by default, like `StandardTestDispatcher`.",
+        level = DeprecationLevel.WARNING
+    )
     @ExperimentalCoroutinesApi // Since 1.2.1, tentatively till 1.3.0
     public fun pauseDispatcher()
 
@@ -119,6 +127,10 @@ public interface DelayController {
      * time and execute coroutines scheduled in the future use, one of [advanceTimeBy],
      * or [advanceUntilIdle].
      */
+    @Deprecated(
+        "Please use a dispatcher that is paused by default, like `StandardTestDispatcher`.",
+        level = DeprecationLevel.WARNING
+    )
     @ExperimentalCoroutinesApi // Since 1.2.1, tentatively till 1.3.0
     public fun resumeDispatcher()
 }
